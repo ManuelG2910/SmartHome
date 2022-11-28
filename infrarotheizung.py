@@ -5,7 +5,7 @@ class infrarotheizung (datenbank):
 
     heizungAktivierung = 0
     heizungDeaktivierung = 0
-    heizungPause = 0
+    heizungPause = datetime(0)
     laufzeit = 0
     pruefungszeit = 0
 
@@ -15,17 +15,20 @@ class infrarotheizung (datenbank):
 # Heizung wird aktiviert mit Maximum Laufzeit berechnung
     def heizung_aktivieren(self):
 
-        # Zeit der Aktivierung speichern, nach 120 Minuten ausschalten
-        heizungAktivierung = datetime.datetime.now()
-        dt = datetime.strptime(heizungAktivierung, '%Y-%m-%d %H:%M:%S.%f')
-        #heizungDeaktivierung = dt + timedelta(minutes= laufzeit)
+        if datetime(infrarotheizung.heizungPause) < datetime.datetime.now():
+            # Zeit der Aktivierung speichern, nach x Minuten ausschalten
+            heizungAktivierung = datetime.datetime.now()
+            dt = datetime.strptime(heizungAktivierung, '%Y-%m-%d %H:%M:%S.%f')
+            heizungDeaktivierung = dt + timedelta(minutes=float(infrarotheizung.laufzeit))
+        else:
+            return False
 
-# Heizung eird deaktiviert mit Pausenbechnung
+# Heizung wird deaktiviert mit Pausenberechnung
     def heizung_deaktivieren(self):
 
         heizungDeaktivierung = datetime.datetime.now()
         dt = datetime.strptime(heizungDeaktivierung, '%Y-%m-%d %H:%M:%S.%f')
-        #heizungPause = dt + timedelta(minutes=pruefungszeit)
+        heizungPause = dt + timedelta(minutes=float(infrarotheizung.pruefungszeit))
         # die Zeit zurück auf 0 setzen
 
         heizungAktivierung = 0
@@ -39,20 +42,19 @@ class infrarotheizung (datenbank):
 # Prüfungszeiten anpassen
     def pruefungszeit_anpassen(pruefungszeit):
 
-        pruefungszeit = pruefungszeit
+        pruefungszeit = float(pruefungszeit)
 
 # Laufzeit anpassen
     def laufzeit_anpassen(laufzeit):
 
-        laufzeit = laufzeit
+        laufzeit = float(laufzeit)
 
-    # Update Tabelle Schwellenwert die Spalte Luftfeuchtigkeit
+# Update Tabelle Schwellenwert die Spalte Luftfeuchtigkeit
     def schwellwert_luftfeuchtigkeit_anpassen(self, luftfeuchtigkeit):
 
         mycursor = self._cnx.cursor()
         mycursor.execute("UPDATE Schwellenwert SET Temperatur ="+luftfeuchtigkeit)
         self._cnx.commit()
-
 
      # Update Tabelle Schwellenwert die Spalte Luftfeuchtigkeit
     def schwellwert_temperatur_anpassen(self, temperatur):

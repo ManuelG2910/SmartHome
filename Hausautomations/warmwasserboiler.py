@@ -24,9 +24,7 @@ def automatik(startzeit, endzeit):
     else:
         deaktivieren()
 
-#aktuelle_Zeit = datetime. datetime.now()
-#dt = datetime.strptime(aktuelle_Zeit, '%Y-%m-%d %H:%M:%S.%f')
-#endzeit = dt+timedelta(minutes=float(thisdict["Laufzeit"]))
+
 
 
 automatik(startzeit, endzeit)

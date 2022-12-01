@@ -35,9 +35,8 @@ def schwellenwert_Strumwarnung_pruefen():
     while True:
         windwert = 0 # ruft Methode zu windwert auf
         if thisdict["Schwellenert_Strumwarnung"] >= windwert:
-            print("Sturmwarnung")
             nachricht_senden(windwert)
-        print("Sturmwarnung")
+        print("Thread_1")
         time.sleep(60)
 
 # Nachricht wird bei Sturmwarnung versendet

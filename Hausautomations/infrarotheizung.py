@@ -45,27 +45,32 @@ def laufzeit_pruefen():
             if aktuelle_Zeit > max_heiz_Zeit:
                 heizung_deaktivieren()
                 time.sleep(thisdict["Prüfungszeit"]*60)
+        print("Thread_3")
         time.sleep(60)
 def balkonkraftwerk_strom_pruefung():
-    x = 0# Methode in für  Balkonkraftwerk Strom aufrufen
+    while True:
+        x = 0# Methode in für  Balkonkraftwerk Strom aufrufen
 
-    if x > thisdict["Balkonkraftwerk Strom Wert"]:
-        heizung_automatisch_aktivieren()
-    else:
-        heizung_automatisch_deaktivieren()
+        if x > thisdict["Balkonkraftwerk Strom Wert"]:
+            heizung_automatisch_aktivieren()
+        else:
+            heizung_automatisch_deaktivieren()
 
-    time.sleep(thisdict["Balkonkraftwerk Strom Wert"]*60)
+        print("Thread_2")
+        time.sleep(thisdict["Balkonkraftwerk Strom Wert"]*60)
 
 def optimiertes_Heizen():
-    aktuelle_Temp = 0 # aktuelle Zimmertemperatur holen
-    aktuelle_Luftf = 0 # aktuelle Luftfeuchtigkeit holen
+    while True:
+        aktuelle_Temp = 0 # aktuelle Zimmertemperatur holen
+        aktuelle_Luftf = 0 # aktuelle Luftfeuchtigkeit holen
 
-    if aktuelle_Temp < thisdict["Schwellenwert Temperatur"] and aktuelle_Luftf > thisdict["Schwellenwert Luftfeuchtigkeit"]:
-        heizung_aktivieren()
-    elif aktuelle_Temp > thisdict["Schwellenwert Temperatur"] and aktuelle_Luftf < thisdict["Schwellenwert Luftfeuchtigkeit"]:
-        heizung_deaktivieren()
+        if aktuelle_Temp < thisdict["Schwellenwert Temperatur"] and aktuelle_Luftf > thisdict["Schwellenwert Luftfeuchtigkeit"]:
+            heizung_aktivieren()
+        elif aktuelle_Temp > thisdict["Schwellenwert Temperatur"] and aktuelle_Luftf < thisdict["Schwellenwert Luftfeuchtigkeit"]:
+            heizung_deaktivieren()
 
-    time.sleep(60)
+        print("Thread_4")
+        time.sleep(60)
 
 # Laufzeit anpassen
 def laufzeit_anpassen(laufzeit):

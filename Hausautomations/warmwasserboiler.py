@@ -3,7 +3,8 @@ from datetime import datetime, timedelta
 # Default-Wert = aus
 aktivierungszeit= None
 statusaktiv = "aus"
-
+startzeit = datetime.now()
+endzeit = datetime.now().
 def aktivieren():
     statusaktiv= "an"
     print(statusaktiv)
@@ -23,11 +24,12 @@ def automatik(startzeit, endzeit):
     else:
         deaktivieren()
 
-aktuelle_Zeit = datetime. datetime.now()
-dt = datetime.strptime(aktuelle_Zeit, '%Y-%m-%d %H:%M:%S.%f')
-endzeit = dt+timedelta(minutes=float(thisdict["Laufzeit"]))
+#aktuelle_Zeit = datetime. datetime.now()
+#dt = datetime.strptime(aktuelle_Zeit, '%Y-%m-%d %H:%M:%S.%f')
+#endzeit = dt+timedelta(minutes=float(thisdict["Laufzeit"]))
 
-automatik(aktuelle_Zeit, endzeit)
+
+automatik(startzeit, endzeit)
 
 
 #    def pruefungszeit_anapssen(self):

@@ -13,7 +13,12 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="d7e1e319-158f-4bbc-b330-1a571febf46d">
-      <console name="mysmarthome" type="STANDARD" schema="mysmarthome" session="Main" />
+      <console name="mysmarthome" type="STANDARD" schema="mysmarthome" session="Main"><![CDATA[use mysmarthome
+CREATE TABLE testtable (
+    column1 varchar,
+    column2 int,
+    column3 double,
+);]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">

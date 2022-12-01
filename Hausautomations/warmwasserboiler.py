@@ -4,7 +4,7 @@ from datetime import datetime, timedelta
 aktivierungszeit= None
 statusaktiv = "aus"
 startzeit = datetime.now()
-endzeit = datetime.now().
+endzeit = datetime.now()
 def aktivieren():
     statusaktiv= "an"
     print(statusaktiv)

@@ -5,6 +5,13 @@ aktivierungszeit= None
 statusaktiv = "aus"
 startzeit = datetime.now()
 endzeit = datetime.now()
+
+thisdict = {
+    "Laufzeit": 120,
+    "Solarstromwerte": 2.0,
+    "Tarifzeiten": 3.0,
+    "Prüfungszeit": 2.0
+}
 def aktivieren():
     statusaktiv= "an"
     print(statusaktiv)
@@ -23,22 +30,18 @@ def automatik(startzeit, endzeit):
         aktivieren()
     else:
         deaktivieren()
+def pruefungszeit_anapssen(pruefungszeit):
+    thisdict["Prüfungszeit"] = pruefungszeit
+
+def tarifzeiten_anpassen(tarifzeit):
+    thisdict["Tarifzeit"] = tarifzeit
+
+def laufzeit_anpassen(laufzeit):
+    thisdict["Laufzeit"] = laufzeit
+def solarstromwerte_anpassen(stromwert):
+ thisdict["Stromwert"] = stromwert
 
 
 
-
-automatik(startzeit, endzeit)
-
-
-#    def pruefungszeit_anapssen(self):
-
-
-   # def tarifzeiten_anpassen(self):
-
-
- #   def laufzeit_anpassen(self):
-
-
- #   def solarstromwerte_anpassen(self):
 
 

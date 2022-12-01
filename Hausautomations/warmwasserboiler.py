@@ -9,7 +9,7 @@ endzeit = datetime.now()
 thisdict = {
     "Laufzeit": 120,
     "Solarstromwerte": 2.0,
-    "Tarifzeiten": 3.0,
+    "Tarifzeiten": 4.0,
     "Prüfungszeit": 2.0
 }
 def aktivieren():

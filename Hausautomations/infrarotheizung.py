@@ -3,9 +3,9 @@ import time
 
 # Steuerung der Infrarotheizung
 
-aktivierte_Heizung_Zeit = None
-max_heiz_Zeit = None
-pause_Zeit = None
+aktivierte_Heizung_Zeit = 0
+max_heiz_Zeit = 0
+pause_Zeit = 0
 
 thisdict = {
     "Schwellenwert Luftfeuchtigkeit": 3.0,
@@ -40,12 +40,12 @@ def heizung_automatisch_deaktivieren():
 
 def laufzeit_pruefen():
     while True:
-        aktuelle_Zeit = datetime.datetime.jetzt()
-        if aktuelle_Zeit > max_heiz_Zeit:
-            heizung_deaktivieren()
-            time.sleep(thisdict["Prüfungszeit"]*60)
-
-    time.sleep(60)
+        aktuelle_Zeit = datetime.now()
+        if not max_heiz_Zeit == 0:
+            if aktuelle_Zeit > max_heiz_Zeit:
+                heizung_deaktivieren()
+                time.sleep(thisdict["Prüfungszeit"]*60)
+        time.sleep(60)
 def balkonkraftwerk_strom_pruefung():
     x = 0# Methode in für  Balkonkraftwerk Strom aufrufen
 
@@ -60,9 +60,9 @@ def optimiertes_Heizen():
     aktuelle_Temp = 0 # aktuelle Zimmertemperatur holen
     aktuelle_Luftf = 0 # aktuelle Luftfeuchtigkeit holen
 
-    if aktuelle_Temp < ["Schwellenwert Temperatur"] and aktuelle_Luftf > ["Schwellenwert Luftfeuchtigkeit"]:
+    if aktuelle_Temp < thisdict["Schwellenwert Temperatur"] and aktuelle_Luftf > thisdict["Schwellenwert Luftfeuchtigkeit"]:
         heizung_aktivieren()
-    elif aktuelle_Temp > ["Schwellenwert Temperatur"] and aktuelle_Luftf < ["Schwellenwert Luftfeuchtigkeit"]:
+    elif aktuelle_Temp > thisdict["Schwellenwert Temperatur"] and aktuelle_Luftf < thisdict["Schwellenwert Luftfeuchtigkeit"]:
         heizung_deaktivieren()
 
     time.sleep(60)

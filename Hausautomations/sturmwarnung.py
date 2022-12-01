@@ -38,7 +38,7 @@ def schwellenwert_Strumwarnung_pruefen():
             print("Sturmwarnung")
             nachricht_senden(windwert)
         print("Sturmwarnung")
-        time.sleep(10)
+        time.sleep(60)
 
 # Nachricht wird bei Sturmwarnung versendet
 def nachricht_senden(windwert):

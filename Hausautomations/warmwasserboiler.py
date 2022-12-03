@@ -1,19 +1,23 @@
 from datetime import datetime, timedelta
 import time
+import datetime
 
 # Default-Wert = aus
 aktivierungszeit= None
 statusaktiv = True
-startzeit = datetime.now()
-endzeit = datetime.now()
 automaik = False
 
 thisdict = {
     "Laufzeit": 120,
     "Solarstromwerte": 2.0,
     "Tarifzeiten": 4.0,
-    "Prüfungszeit": 2.0
+    "Prüfungszeit": 2.0,
+    "Startzeitraum": "02.12.2022",
+    "Endezeitraum": "02.02.2023"
 }
+
+startzeit = datetime.datetime(2022, 12, 2)
+print(startzeit)
 def aktivieren():
     statusaktiv= True
     aktivierungszeit= datetime.now()
@@ -38,7 +42,7 @@ def automatik():
     # holen der start und endzeit
     while True:
         if automatik == True:
-            if datetime.now() > startzeit and datetime.now() < endzeit:
+            if datetime.now() > startzeit and datetime.now() < startzeit:
                 aktivieren()
             else:
                 deaktivieren()

@@ -1,7 +1,5 @@
 import time
-
-
-
+from Helfer import whatsapp_nachricht
 
 anzahl_Mobilnummer = 0
 
@@ -9,7 +7,6 @@ thisdict = {
     "Schwellenert_Strumwarnung": 3.0,
     "Nachricht Sturmwarnung": "Achtung, starker Wind! Ist alles sicher?"
 }
-
 
 # Neue Mobilnummer zu Dictionary hinzufügen
 def mobilnummer_hinzufuegen(mobilnummer):
@@ -35,12 +32,8 @@ def schwellenwert_Strumwarnung_pruefen():
     while True:
         windwert = 0 # ruft Methode zu windwert auf
         if thisdict["Schwellenert_Strumwarnung"] >= windwert:
-            nachricht_senden(windwert)
+            whatsapp_nachricht.nachricht_senden(thisdict["Handynummer"], thisdict["Nachricht Sturmwarnung"])
         print("Thread_1")
         time.sleep(60)
 
 # Nachricht wird bei Sturmwarnung versendet
-def nachricht_senden(windwert):
-    '''
-            Code
-            '''

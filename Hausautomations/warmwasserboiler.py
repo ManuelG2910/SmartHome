@@ -5,7 +5,7 @@ import datetime
 # Default-Wert = aus
 aktivierungszeit= None
 statusaktiv = True
-automaik = False
+automatik = False
 
 thisdict = {
     "Laufzeit": 120,

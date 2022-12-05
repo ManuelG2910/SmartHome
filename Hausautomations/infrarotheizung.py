@@ -17,6 +17,7 @@ thisdict = {
     "Balkonkraftwerk Strom Wert": 300,
 }
 
+
 # Heizung wird aktiviert mit Maximum Laufzeit berechnung
 def heizung_aktivieren():
     aktuelle_Zeit = datetime. datetime. jetzt()
@@ -29,13 +30,16 @@ def heizung_deaktivieren():
     max_heiz_Zeit = 0
     print()
 
+
 # Automatisiertes Heizen
 def heizung_automatisch_aktivieren():
     thisdict["Heizung automatisch"] = True
 
+
 # nicht Automatisiertes Heizen
 def heizung_automatisch_deaktivieren():
     thisdict["Heizung automatisch"] = False
+
 
 def laufzeit_pruefen():
     while True:
@@ -46,6 +50,8 @@ def laufzeit_pruefen():
                 time.sleep(thisdict["Prüfungszeit"]*60)
         print("Thread_3")
         time.sleep(60)
+
+
 def balkonkraftwerk_strom_pruefung():
     while True:
         x = 0# Methode in für  Balkonkraftwerk Strom aufrufen
@@ -57,6 +63,7 @@ def balkonkraftwerk_strom_pruefung():
 
         print("Thread_2")
         time.sleep(thisdict["Balkonkraftwerk Strom Wert"]*60)
+
 
 def optimiertes_Heizen():
     while True:
@@ -71,25 +78,31 @@ def optimiertes_Heizen():
         print("Thread_4")
         time.sleep(60)
 
+
 # Laufzeit anpassen
 def laufzeit_anpassen(laufzeit):
     thisdict["Laufzeit"] = laufzeit
+
 
 # Laufzeit Pause anpassen
 def laufzeit_pause_anpassen(laufzeit_pause):
     thisdict["Laufzeit Pause"] = laufzeit_pause
 
+
 # Prüfungszeiten anpassen
 def pruefungszeit_anpassen(pruefungszeit):
     thisdict["Prüfungszeit"] = pruefungszeit
+
 
 # Balkonkraftwerk Strom anpassen
 def balkonkraftwer_strom_anpassen(balkonkraftwer_strom):
     thisdict["Balkonkraftwerk Strom"] = balkonkraftwer_strom
 
+
 # Schwellenwert Luftfeuchtigkeit anpassen
 def schwellwert_luftfeuchtigkeit_anpassen(luftfeuchtigkeit):
     thisdict["Schwellenwert Luftfeuchtigkeit"] = luftfeuchtigkeit
+
 
 # Schwellenwert Temperatur anpassen
 def schwellwert_temperatur_anpassen(temperatur):

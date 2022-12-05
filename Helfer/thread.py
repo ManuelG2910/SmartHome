@@ -6,6 +6,8 @@ from Hausautomations import warmwasserboiler
  es werden Threads benötigt, da bestimmte Methoden regelmäßig überprüft werden müssen
  --> in den Methoden ist eine dauerschleife, die schlafen geschickt wird
 """
+
+
 def threads_zeitrnpruefen():
     # Threads werden erzeugt und werden mit der für sie vorgesehenen Methode verknüpft
     thread_1 = Thread(target=sturmwarnung.schwellenwert_Strumwarnung_pruefen)

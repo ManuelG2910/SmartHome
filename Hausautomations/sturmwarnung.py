@@ -1,6 +1,5 @@
 import time
 from Helfer import whatsapp_nachricht
-from Helfer import whatsapp_nachricht
 
 thisdict = {
     "Schwellenert_Strumwarnung": 3.0,

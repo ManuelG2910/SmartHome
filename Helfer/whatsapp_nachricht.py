@@ -1,17 +1,15 @@
-import pywhatkit
+from pywhatkit import whats
 import os
-
-from pywhatkit import sendwhatmsg_instantly, sendwhatmsg_to_group_instantly
 
 hanynummer_liste = ["+4915730188009"]
 gruppen_id = [""]
-
-
+gruppen_id = "JlNQQrJxjgzKVJ34gPTegb"
+nachricht = "Sturmwarnung"
 def nachricht_senden():
     for i in range(len(hanynummer_liste)):
-        sendwhatmsg_instantly(
+        whats.sendwhatmsg_instantly(
             phone_no=hanynummer_liste[i],
-            message="Sturmwarnung",
+            message=nachricht,
             wait_time=15,
             tab_close=True,
             close_time=3
@@ -20,10 +18,10 @@ def nachricht_senden():
 
 def bild_senden():
     for i in range(len(hanynummer_liste)):
-        pywhatkit.sendwhats_image(
+        whats.sendwhats_image(
             receiver=hanynummer_liste[i],
             img_path=os.path.join("..", "Bilder", "Sturmwarnung.png"),
-            caption="Sturmwarnung!!",
+            caption=nachricht,
             wait_time=15,
             tab_close=True,
             close_time=3
@@ -31,9 +29,9 @@ def bild_senden():
 
 
 def nachricht_gruppe_senden():
-    sendwhatmsg_to_group_instantly(
-        group_id="JlNQQrJxjgzKVJ34gPTegb",
-        message="Hallo",
+    whats.sendwhatmsg_to_group_instantly(
+        group_id=gruppen_id,
+        message=nachricht,
         wait_time=15,
         tab_close=True,
         close_time=3
@@ -54,3 +52,11 @@ def mobilnummer_aendern(mobilnummer_alt, mobilnummer_neu):
 # Vorhandene Mobilnummer löschen
 def mobilnummer_loeschen(mobilnummer):
     hanynummer_liste.remove(mobilnummer)
+
+
+def guppen_id_aendern(grupen_id_neu):
+    gruppen_id=grupen_id_neu
+
+
+def nachricht_aendern(nachricht_neu):
+     nachricht = nachricht_neu

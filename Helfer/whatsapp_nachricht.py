@@ -4,7 +4,9 @@ import os
 hanynummer_liste = ["+4915730188009"]
 gruppen_id = [""]
 gruppen_id = "JlNQQrJxjgzKVJ34gPTegb"
-nachricht = "Sturmwarnung"
+nachricht = "Achtung, starker Wind! Ist alles Windsicher?"
+
+
 def nachricht_senden():
     for i in range(len(hanynummer_liste)):
         whats.sendwhatmsg_instantly(

@@ -11,10 +11,9 @@ def schwellenwert_Strumwarnung_aendern( schwellenwert_Sturm):
     thisdict["Schwellenert_Strumwarnung"] = schwellenwert_Sturm
 
 # aktueller Windwert wird mit dem Stellenwert abgeglichen und ggf wird eine Nahcricht versendet
-def schwellenwert_Strumwarnung_pruefen():
-    while True:
-        windwert = 0 # ruft Methode zu windwert auf
-        if thisdict["Schwellenert_Strumwarnung"] >= windwert:
-            whatsapp_nachricht.nachricht_senden()
-        print("Thread_1")
-        time.sleep(60)
+def schwellenwert_Strumwarnung_pruefen(windgeschwindigkeit, windrichtung):
+
+    print('Thread 4')
+
+    if thisdict["Schwellenert_Strumwarnung"] >= float(windgeschwindigkeit):
+        whatsapp_nachricht.nachricht_senden(windgeschwindigkeit, windrichtung)

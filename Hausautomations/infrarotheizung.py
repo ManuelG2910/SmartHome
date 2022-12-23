@@ -65,18 +65,14 @@ def balkonkraftwerk_strom_pruefung():
         time.sleep(thisdict["Balkonkraftwerk Strom Wert"]*60)
 
 
-def optimiertes_Heizen():
-    while True:
-        aktuelle_Temp = 0 # aktuelle Zimmertemperatur holen
-        aktuelle_Luftf = 0 # aktuelle Luftfeuchtigkeit holen
+def optimiertes_Heizen(temperatur,luftfeuchtigkeit):
 
-        if aktuelle_Temp < thisdict["Schwellenwert Temperatur"] and aktuelle_Luftf > thisdict["Schwellenwert Luftfeuchtigkeit"]:
-            heizung_aktivieren()
-        elif aktuelle_Temp > thisdict["Schwellenwert Temperatur"] and aktuelle_Luftf < thisdict["Schwellenwert Luftfeuchtigkeit"]:
-            heizung_deaktivieren()
+    print('Thread 1')
 
-        print("Thread_4")
-        time.sleep(60)
+    if float(temperatur) < thisdict["Schwellenwert Temperatur"] and float(luftfeuchtigkeit) > thisdict["Schwellenwert Luftfeuchtigkeit"]:
+        heizung_aktivieren()
+    elif float(temperatur) > thisdict["Schwellenwert Temperatur"] and float(luftfeuchtigkeit) < thisdict["Schwellenwert Luftfeuchtigkeit"]:
+        heizung_deaktivieren()
 
 
 # Laufzeit anpassen

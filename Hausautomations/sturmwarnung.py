@@ -6,14 +6,18 @@ thisdict = {
     "Nachricht Sturmwarnung": "Achtung, starker Wind! Ist alles sicher?"
 }
 
+
 # Stellenwert in Dictionary anpassen
 def schwellenwert_Strumwarnung_aendern( schwellenwert_Sturm):
     thisdict["Schwellenert_Strumwarnung"] = schwellenwert_Sturm
 
 # aktueller Windwert wird mit dem Stellenwert abgeglichen und ggf wird eine Nahcricht versendet
+
+
 def schwellenwert_Strumwarnung_pruefen(windgeschwindigkeit, windrichtung):
 
     print('Thread 4')
 
     if thisdict["Schwellenert_Strumwarnung"] >= float(windgeschwindigkeit):
-        whatsapp_nachricht.nachricht_senden(windgeschwindigkeit, windrichtung)
+        print('Nachricht')
+        #whatsapp_nachricht.nachricht_senden(windgeschwindigkeit, windrichtung)

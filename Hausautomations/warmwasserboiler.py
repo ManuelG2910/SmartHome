@@ -80,8 +80,3 @@ def laufzeit_anpassen(laufzeit):
 
 def solarstromwerte_anpassen(stromwert):
  thisdict["Stromwert"] = stromwert
-
-
-
-
-

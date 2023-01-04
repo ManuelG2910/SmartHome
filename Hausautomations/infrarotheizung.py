@@ -2,7 +2,8 @@ from datetime import datetime, timedelta
 import time
 import ShellyPy
 
-device = ShellyPy.Shelly("192.168.178.69") #Hier die deviceIP angeben
+#Hier die deviceIP angeben
+#device = ShellyPy.Shelly("192.168.178.69")
 
 # Steuerung der Infrarotheizung
 aktivierte_Heizung_Zeit = 0
@@ -22,16 +23,16 @@ thisdict = {
 
 # Heizung wird aktiviert mit Maximum Laufzeit berechnung
 def heizung_aktivieren():
-    #aktuelle_Zeit = datetime. datetime. jetzt()
-   # dt = datetime.strptime(aktuelle_Zeit, '%Y-%m-%d %H:%M:%S.%f')
-   # max_heiz_Zeit = dt+timedelta(minutes=float(thisdict["Laufzeit"]))
-    device.relay(0, turn=False)
+   aktuelle_Zeit = datetime. datetime. jetzt()
+   dt = datetime.strptime(aktuelle_Zeit, '%Y-%m-%d %H:%M:%S.%f')
+   max_heiz_Zeit = dt+timedelta(minutes=float(thisdict["Laufzeit"]))
+    #device.relay(0, turn=False)
 
 
 # Heizung wird deaktiviert mit Pausenberechnung
 def heizung_deaktivieren():
     max_heiz_Zeit = 0
-    device.relay(0, turn=False)
+    #device.relay(0, turn=False)
 
 
 # Automatisiertes Heizen
@@ -68,7 +69,7 @@ def balkonkraftwerk_strom_pruefung():
         time.sleep(thisdict["Balkonkraftwerk Strom Wert"]*60)
 
 
-def optimiertes_Heizen(temperatur,luftfeuchtigkeit):
+def optimiertes_Heizen(temperatur, luftfeuchtigkeit):
 
     print('Thread 1')
 

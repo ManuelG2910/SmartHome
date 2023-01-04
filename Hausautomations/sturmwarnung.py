@@ -2,7 +2,7 @@ import time
 from Helfer import whatsapp_nachricht
 
 thisdict = {
-    "Schwellenert_Strumwarnung": 3.0,
+    "Schwellenert_Strumwarnung": 6.0,
     "Nachricht Sturmwarnung": "Achtung, starker Wind! Ist alles sicher?"
 }
 

@@ -25,7 +25,7 @@ def heizung_aktivieren():
     aktuelle_Zeit = datetime. datetime. jetzt()
     dt = datetime.strptime(aktuelle_Zeit, '%Y-%m-%d %H:%M:%S.%f')
     max_heiz_Zeit = dt+timedelta(minutes=float(thisdict["Laufzeit"]))
-    device.relay(0, turn=True)
+    #device.relay(0, turn=True)
 
 
 # Heizung wird deaktiviert mit Pausenberechnung

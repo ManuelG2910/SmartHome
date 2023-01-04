@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 import time
-import datetime
+
 import ShellyPy
 
 #device = ShellyPy.Shelly("192.168.178.69") #Hier die deviceIP angeben
@@ -25,7 +25,7 @@ print(startzeit)
 
 def aktivieren():
     statusaktiv= True
-    #device.relay(1, turn=False)
+    #device.relay(1, turn=True)
     aktivierungszeit= datetime.now()
     print(aktivierungszeit)
 

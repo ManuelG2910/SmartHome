@@ -3,7 +3,7 @@ import time
 import datetime
 import ShellyPy
 
-device = ShellyPy.Shelly("192.168.178.69") #Hier die deviceIP angeben
+#device = ShellyPy.Shelly("192.168.178.69") #Hier die deviceIP angeben
 
 # Default-Wert = aus
 aktivierungszeit= None
@@ -14,7 +14,7 @@ thisdict = {
     "Laufzeit": 120,
     "Solarstromwerte": 2.0,
     "Tarifzeiten": 4.0,
-    "Prüfungszeit": 2.0,
+    "Prüfungszeit": 15,
     "Startzeitraum": "02.12.2022",
     "Endezeitraum": "02.02.2023"
 }
@@ -25,14 +25,14 @@ print(startzeit)
 
 def aktivieren():
     statusaktiv= True
-    device.relay(1, turn=False)
+    #device.relay(1, turn=False)
     aktivierungszeit= datetime.now()
     print(aktivierungszeit)
 
 
 def deaktivieren():
     statusaktiv= False
-    device.relay(1, turn=False)
+    #device.relay(1, turn=False)
     deaktivierungszeit = datetime.now()
     print(deaktivierungszeit)
 

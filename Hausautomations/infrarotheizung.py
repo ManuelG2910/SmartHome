@@ -17,7 +17,6 @@ thisdict = {
     "Balkonkraftwerk Strom Wert": 300,
 }
 
-
 # Heizung wird aktiviert mit Maximum Laufzeit berechnung
 def heizung_aktivieren():
     aktuelle_Zeit = datetime. datetime. jetzt()

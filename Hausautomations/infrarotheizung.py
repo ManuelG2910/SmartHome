@@ -1,8 +1,10 @@
 from datetime import datetime, timedelta
 import time
+import ShellyPy
+
+device = ShellyPy.Shelly("192.168.178.69") #Hier die deviceIP angeben
 
 # Steuerung der Infrarotheizung
-
 aktivierte_Heizung_Zeit = 0
 max_heiz_Zeit = 0
 pause_Zeit = 0
@@ -20,15 +22,16 @@ thisdict = {
 
 # Heizung wird aktiviert mit Maximum Laufzeit berechnung
 def heizung_aktivieren():
-    aktuelle_Zeit = datetime. datetime. jetzt()
-    dt = datetime.strptime(aktuelle_Zeit, '%Y-%m-%d %H:%M:%S.%f')
-    max_heiz_Zeit = dt+timedelta(minutes=float(thisdict["Laufzeit"]))
+    #aktuelle_Zeit = datetime. datetime. jetzt()
+   # dt = datetime.strptime(aktuelle_Zeit, '%Y-%m-%d %H:%M:%S.%f')
+   # max_heiz_Zeit = dt+timedelta(minutes=float(thisdict["Laufzeit"]))
+    device.relay(0, turn=False)
 
 
 # Heizung wird deaktiviert mit Pausenberechnung
 def heizung_deaktivieren():
     max_heiz_Zeit = 0
-    print()
+    device.relay(0, turn=False)
 
 
 # Automatisiertes Heizen

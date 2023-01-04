@@ -6,7 +6,7 @@ import ShellyPy
 #device = ShellyPy.Shelly("192.168.178.69") #Hier die deviceIP angeben
 
 # Default-Wert = aus
-aktivierungszeit= None
+aktivierungszeit = None
 statusaktiv = True
 automatik = False
 
